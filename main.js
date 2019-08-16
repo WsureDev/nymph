@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App'
 import api from '@/common/vmeitime-http/'
-
+import service from '@/common/service.js'
 Vue.prototype.$api = api
+Vue.prototype.$service = service
+
 import basics from './pages/basics/home.vue'
 Vue.component('basics',basics)
 

@@ -21,7 +21,7 @@ export const openId = (data) => {
 		return response
 	}
     return http.request({
-        url: 'api/code2Session',
+        url: 'wx/login',
 		method: 'POST',
         data,
     })

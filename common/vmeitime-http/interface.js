@@ -29,9 +29,10 @@ http.delete('user/1').then((res)=>{
 }) 
 
 */
+import globalConfig from '@/common/global_config.js';
 export default {
 	config: {
-		baseUrl: "https://zhshy.top/",
+		baseUrl: globalConfig.baseUrl + "/",
 		header: {
 			// 'Content-Type':'application/json;charset=UTF-8',
 			'Content-Type':'application/x-www-form-urlencoded'

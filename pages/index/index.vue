@@ -37,6 +37,9 @@
 			NavChange: function(e) {
 				this.PageCur = e.currentTarget.dataset.cur
 			}
+		},
+		async onLoad() {
+			var data_ = await this.$service.Login()
 		}
 	}
 </script>
