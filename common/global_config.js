@@ -2,7 +2,7 @@
 const isDev = true;
 
 //开发服务器地址（勿带末尾‘/’）
-const DEV_BASE_URL = 'http://localhost:3000';
+const DEV_BASE_URL = 'http://127.0.0.1:3000';
 
 //线上服务器地址（勿带末尾‘/’）
 const PRO_BASE_URL = 'https://zhshy.top';

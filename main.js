@@ -14,7 +14,7 @@ Vue.component('components',components)
 import plugin from './pages/plugin/home.vue'
 Vue.component('plugin',plugin)
 
-import cuCustom from './colorui/components/cu-custom.vue'
+import cuCustom from '@/components/cu-custom/cu-custom.vue'
 Vue.component('cu-custom',cuCustom)
 
 Vue.config.productionTip = false

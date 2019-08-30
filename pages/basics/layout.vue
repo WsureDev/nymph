@@ -1,6 +1,9 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true"><block slot="backText">返回</block><block slot="content">布局</block></cu-custom>
+		<cu-custom bgColor="bg-gradual-blue" :isCustom="true">
+			<!-- <block slot="backText">返回</block> -->
+			<block slot="content">布局</block>
+		</cu-custom>
 		<scroll-view scroll-x class="bg-white nav text-center fixed" :style="[{top:CustomBar + 'px'}]">
 			<view class="cu-item" :class="index==TabCur?'text-blue cur':''" v-for="(item,index) in tabNav" :key="index" @tap="tabSelect"
 			 :data-id="index">

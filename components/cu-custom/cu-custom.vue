@@ -8,7 +8,7 @@
 						<slot name="backText"></slot>
 					</view>
 				</block>
-				<block v-if="!isBack&&isCustom">
+				<block v-show="!isBack&&isCustom">
 					<!-- #ifdef MP -->
 					<view class="action border-custom"  v-if="isCustom" :style="styleMP">
 						<text class="cuIcon-back" @tap="BackPage"></text>
@@ -56,6 +56,9 @@
 			styleMP() {
 				var Custom= this.Custom;
 				var style = `width:${Custom.width}px;height:${Custom.height}px;margin-left:calc(750rpx - ${Custom.right}px)`;
+				//#ifdef MP-QQ
+				// style = `width:${750/4.5}rpx;height:${750/12}rpx;margin-left:${750/30}rpx`;
+				//#endif
 				return style;
 			},
 			styleNMP() {

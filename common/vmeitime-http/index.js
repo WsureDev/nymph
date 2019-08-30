@@ -21,7 +21,7 @@ export const openId = (data) => {
 		return response
 	}
     return http.request({
-        url: 'wx/login',
+        url: 'mp/login',
 		method: 'POST',
         data,
     })

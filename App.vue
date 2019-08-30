@@ -4,6 +4,8 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
+					console.log('SystemInfo:',e);
+					
 					// #ifndef MP
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
@@ -12,14 +14,23 @@
 						Vue.prototype.CustomBar = e.statusBarHeight + 45;
 					};
 					// #endif
-
+					
+					let custom;
 					// #ifdef MP-WEIXIN
 					Vue.prototype.StatusBar = e.statusBarHeight;
-					let custom = wx.getMenuButtonBoundingClientRect();
+					custom = wx.getMenuButtonBoundingClientRect();
 					Vue.prototype.Custom = custom;
 					Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
 					// #endif		
 
+					// #ifdef MP-QQ
+					Vue.prototype.StatusBar = e.statusBarHeight;
+					custom = qq.getMenuButtonBoundingClientRect();
+					custom = custom  && custom.width ? custom : {width:80,height:30,left:e.windowWidth-12-80,right:e.windowWidth-12,top:e.statusBarHeight+10,bottom:e.statusBarHeight+10+30};
+					Vue.prototype.Custom = custom;
+					Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+					// #endif
+					console.log(custom);
 					// #ifdef MP-ALIPAY
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
@@ -131,7 +142,7 @@
 		border-radius: 12upx;
 		width: 45%;
 		margin: 0 2.5% 40upx;
-		background-image: url(https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358352-assets/web-upload/cc3b1807-c684-4b83-8f80-80e5b8a6b975.png);
+		background-image: url(static/navBg.png);
 		background-size: cover;
 		background-position: center;
 		position: relative;

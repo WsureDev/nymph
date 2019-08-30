@@ -1,7 +1,7 @@
 <template name="basics">
 	<view>
 		<scroll-view scroll-y class="page">
-			<image src="https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png"
+			<image src="/static/BasicsBg.png"
 			 mode="widthFix" class="response"></image>
 			<view class="nav-list">
 				<navigator hover-class="none" :url="'/pages/basics/' + item.name" class="nav-li" navigateTo :class="'bg-'+item.color"
@@ -82,6 +82,8 @@
 						cuIcon: 'loading2'
 					}
 				],
+				img:'https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png',
+				img2:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
 			};
 		},
 		onShow() {
